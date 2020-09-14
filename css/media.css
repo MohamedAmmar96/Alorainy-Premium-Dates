@@ -56,9 +56,14 @@
         justify-content: center;
         margin-top: 4px;
     }
-    .user-terms .config-icon,
-    .user-terms .menu-icon {
+    .user-terms .config-icon {
         margin-top: 3px;
+    }
+    .user-terms .shop-icon {
+        margin-top: 3px;
+    }
+    .user-terms .menu-icon {
+        margin-top: 4px;
     }
     .user-terms .config-name,
     .user-terms .fav-name,
@@ -593,9 +598,14 @@
         justify-content: center;
         margin-top: 4px;
     }
-    .user-terms .config-icon,
-    .user-terms .menu-icon {
+    .user-terms .config-icon {
         margin-top: 3px;
+    }
+    .user-terms .shop-icon {
+        margin-top: 3px;
+    }
+    .user-terms .menu-icon {
+        margin-top: 4px;
     }
     .user-terms .config-name,
     .user-terms .fav-name,
