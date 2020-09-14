@@ -54,6 +54,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-top: 4px;
+    }
+    .user-terms .config-icon,
+    .user-terms .menu-icon {
+        margin-top: 3px;
     }
     .user-terms .config-name,
     .user-terms .fav-name,
@@ -70,21 +75,22 @@
     }
     /*** Start Search Box ***/
     .search-box {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 30%);
+        height: auto;
         background-color: rgba(0, 0, 0, 0.7);
-        z-index: 9999;
+        z-index: 99999;
         display: none;
     }
     .close-search-btn {
         display: block;
         position: absolute;
-        top: 35%;
+        top: 30%;
         left: 50%;
-        color: #fff;
+        color: #000;
         transform: translateX(-50%);
         outline: none;
         border: none;
@@ -94,14 +100,16 @@
         text-align: center;
         font-size: 25px;
         opacity: 1;
+        z-index: 99999;
         border-radius: 50%;
+        display: none;
     }
     .search-bar {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: calc(100% - 30%);
+        width: 100%;
     }
     .search-bar .search-input {
         width: 100%;
@@ -502,7 +510,7 @@
         height: auto;
         margin-top: 10px;
     }
-    .search-bar {
+    .search-box {
         width: calc(100% - 10%);
     }
     .newsletter .email {
@@ -583,6 +591,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-top: 4px;
+    }
+    .user-terms .config-icon,
+    .user-terms .menu-icon {
+        margin-top: 3px;
     }
     .user-terms .config-name,
     .user-terms .fav-name,
@@ -599,37 +612,41 @@
     }
     /*** Start Search Box ***/
     .search-box {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 40%);
+        height: auto;
         background-color: rgba(0, 0, 0, 0.7);
-        z-index: 9999;
+        z-index: 99999;
         display: none;
     }
     .close-search-btn {
         display: block;
         position: absolute;
-        top: 35%;
+        top: 30%;
         left: 50%;
+        color: #000;
         transform: translateX(-50%);
         outline: none;
         border: none;
         width: 45px;
         height: 45px;
-        line-height: 48px;
+        line-height: 50px;
         text-align: center;
         font-size: 25px;
         opacity: 1;
+        z-index: 99999;
         border-radius: 50%;
+        display: none;
     }
     .search-bar {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: calc(100% - 40%);
+        width: 100%;
     }
     .search-bar .search-input {
         width: 100%;
@@ -726,6 +743,7 @@
     .shabi .nav-link {
         flex-direction: row;
         justify-content: space-between;
+        transition: all 0.4s ease-in-out;
     }
     html[dir=ltr] .shabi .nav-link {
         flex-direction: row-reverse;

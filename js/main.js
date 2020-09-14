@@ -52,16 +52,27 @@ $(document).ready(function() {
 
     $(".user-terms .search").click(function() {
         $("body").addClass("overflow");
+        $(".overlay-box2").slideDown(300);
+    });
+
+    $(".user-terms .search").click(function() {
+        $("body").addClass("overflow");
         $(".user-terms .search-icon").removeClass("open-search")
         $(".user-terms .search-icon").addClass("close-search")
+        $(".close-search-btn").show(300)
         $(".search-box").slideDown(300);
     });
 
+    $(".close-search-btn,.overlay-box2").click(function() {
+        $("body").removeClass("overflow");
+        $(".overlay-box2").slideUp(300);
+    });
 
-    $(".close-search-btn").click(function() {
+    $(".close-search-btn,.overlay-box2").click(function() {
         $("body").removeClass("overflow");
         $(".user-terms .search-icon").addClass("open-search")
         $(".user-terms .search-icon").removeClass("close-search")
+        $(".close-search-btn").hide(300)
         $(".search-box").slideUp(300);
     });
 
@@ -80,13 +91,18 @@ $(document).ready(function() {
     });
 
     //This is to Open user-config, language & Products Menus in Small Screens Side Menu
+
     $(".shabi").click(function() {
+        $(".shabi .nav-link").toggleClass("rotate");
         $(".shabi-list").slideToggle(300);
     });
+
     $(".nav .lang-name").click(function() {
+        $(".nav .lang-name").toggleClass("rotate");
         $(".nav .lang-list").slideToggle(300);
     });
     $(".nav .my-account").click(function() {
+        $(".nav .my-account").toggleClass("rotate");
         $(".nav .config-box").slideToggle(300);
     });
 
@@ -257,5 +273,54 @@ $(document).ready(function() {
     } else {
         $(".slide-list").addClass("in")
     }
+
+
+    //This is To rotate after arrows in footer ----------------------------------------
+
+    $(".first .footer-heading").click(function() {
+        var x = $(".first .slide-list")
+        if (x.hasClass("collapse")) {
+            $(".first .footer-heading").addClass("rotate")
+            $(".middle .footer-heading").removeClass("rotate")
+            $(".last .footer-heading").removeClass("rotate")
+        }
+    });
+    $(".first .footer-heading").click(function() {
+        var x = $(".first .slide-list")
+        if (x.hasClass("in")) {
+            $(".first .footer-heading").removeClass("rotate")
+        }
+    });
+
+
+    $(".middle .footer-heading").click(function() {
+        var x = $(".middle .slide-list")
+        if (x.hasClass("collapse")) {
+            $(".middle .footer-heading").addClass("rotate")
+            $(".first .footer-heading").removeClass("rotate")
+            $(".last .footer-heading").removeClass("rotate")
+        }
+    });
+    $(".middle .footer-heading").click(function() {
+        var x = $(".middle .slide-list")
+        if (x.hasClass("in")) {
+            $(".middle .footer-heading").removeClass("rotate")
+        }
+    });
+
+    $(".last .footer-heading").click(function() {
+        var x = $(".last .slide-list")
+        if (x.hasClass("collapse")) {
+            $(".last .footer-heading").addClass("rotate")
+            $(".first .footer-heading").removeClass("rotate")
+            $(".middle .footer-heading").removeClass("rotate")
+        }
+    });
+    $(".last .footer-heading").click(function() {
+        var x = $(".last .slide-list")
+        if (x.hasClass("in")) {
+            $(".last .footer-heading").removeClass("rotate")
+        }
+    });
 
 });
