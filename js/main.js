@@ -123,26 +123,6 @@ $(document).ready(function() {
         $(".terms-content .user-config").slideUp(300);
     });
 
-    //Hide And Show Icons in Config Box
-    $(".config-box .get-one").hover(function() {
-        $(".config-box .get-one").toggleClass("login");
-    });
-    $(".config-box .get-two").hover(function() {
-        $(".config-box .get-two").toggleClass("signup");
-    });
-    $(".config-box .get-three").hover(function() {
-        $(".config-box .get-three").toggleClass("account");
-    });
-    $(".config-box .get-four").hover(function() {
-        $(".config-box .get-four").toggleClass("orders");
-    });
-    $(".config-box .get-five").hover(function() {
-        $(".config-box .get-five").toggleClass("balance");
-    });
-    $(".config-box .get-six").hover(function() {
-        $(".config-box .get-six").toggleClass("logout");
-    });
-
 
     $('.main-slider .owl-carousel').owlCarousel({
         loop: true,

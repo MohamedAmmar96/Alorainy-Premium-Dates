@@ -72,11 +72,11 @@
     }
     /*** Start Of Config List ***/
     .terms-content .user-config {
-        left: 30px;
+        left: 16px;
     }
     html[dir=ltr] .terms-content .user-config {
         left: auto;
-        right: -120px;
+        right: -114px;
     }
     /*** Start Search Box ***/
     .search-box {
@@ -132,7 +132,7 @@
     .nav {
         position: fixed;
         top: 0;
-        padding: 60px 5px 30px 5px;
+        padding: 23px 5px 30px 5px;
         margin-bottom: 0;
         right: -580px;
         width: 260px;
@@ -162,6 +162,7 @@
         background-color: transparent;
         color: #fff;
         opacity: 1;
+        z-index: 9999;
         font-size: 22px;
     }
     html[dir=ltr] .nav .close {
@@ -175,6 +176,74 @@
         flex-direction: column;
         text-align: left;
     }
+    .nav .lang {
+        margin-bottom: 60px;
+    }
+    html[dir=ltr] .nav .lang {
+        flex-direction: row-reverse;
+    }
+    .nav .saudia {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    html[dir=ltr] .nav .saudia {
+        margin-left: 0;
+    }
+    .nav .lang-name {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #fff;
+        font-family: "medium";
+        cursor: pointer;
+        flex-direction: row;
+        transition: all 0.4s ease-in-out;
+    }
+    html[dir=ltr] .nav .lang-name {
+        flex-direction: row-reverse;
+    }
+    .nav .lang-name:hover {
+        color: #eab326;
+    }
+    .nav .lang-list {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        width: auto;
+        margin-bottom: 0;
+        background-color: transparent;
+        text-align: right;
+        z-index: auto;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        display: none;
+    }
+    html[dir=ltr] .nav .lang-list {
+        text-align: left;
+        left: 0;
+    }
+    .nav .lang-list .lang-list-li {
+        padding: 0;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    html[dir=ltr] .nav .lang-list .lang-list-li {
+        margin-right: auto;
+        margin-left: 10px;
+    }
+    .nav .lang-list .lang-list-li:first-child::after {
+        display: none;
+    }
+    .lang-list .page-link {
+        color: #fff;
+        font-size: 13px;
+        font-family: "medium";
+        transition: all 0.4s ease-in-out;
+    }
+    .lang-list .page-link:hover {
+        color: #eab326;
+    }
     .nav-content .nav-list {
         flex-direction: column;
         text-align: left;
@@ -185,12 +254,6 @@
     .nav-list .nav-li {
         margin-left: 0;
         padding: 0;
-    }
-    .nav-list .fav-li {
-        display: block;
-    }
-    .nav-list .fav-li .nav-link {
-        display: flex;
     }
     html[dir=ltr] .nav-list .nav-li {
         /* margin-right: auto; */
@@ -260,72 +323,6 @@
     .shabi-list .shabi-link:hover {
         color: #eab326;
     }
-    .nav .lang-name {
-        padding: 5px 0;
-        margin-bottom: 0;
-        color: #fff;
-        font-family: "medium";
-        font-size: 16px;
-        display: flex;
-        cursor: pointer;
-        flex-direction: row;
-        justify-content: space-between;
-        transition: all 0.4s ease-in-out;
-    }
-    html[dir=ltr] .nav .lang-name {
-        flex-direction: row-reverse;
-    }
-    .nav .lang-name::after {
-        content: '\e874';
-        font-family: 'Linearicons-Free';
-        margin-left: 10px;
-        margin-top: 2px;
-    }
-    html[dir=ltr] .nav .lang-name::after {
-        margin-left: auto;
-        margin-right: 10px;
-    }
-    .nav .lang-name:hover {
-        color: #eab326;
-    }
-    .nav .lang-list {
-        position: relative;
-        left: auto;
-        top: auto;
-        width: auto;
-        margin-bottom: 0;
-        background-color: transparent;
-        text-align: right;
-        z-index: auto;
-        box-shadow: none;
-        display: flex;
-        flex-direction: column;
-        display: none;
-    }
-    html[dir=ltr] .nav .lang-list {
-        text-align: left;
-    }
-    .nav .lang-list .lang-list-li {
-        padding: 0;
-        margin-right: 10px;
-        margin-bottom: 5px;
-    }
-    html[dir=ltr] .nav .lang-list .lang-list-li {
-        margin-right: auto;
-        margin-left: 10px;
-    }
-    .nav .lang-list .lang-list-li:first-child::after {
-        display: none;
-    }
-    .lang-list .page-link {
-        color: #fff;
-        font-size: 13px;
-        font-family: "medium";
-        transition: all 0.4s ease-in-out;
-    }
-    .lang-list .page-link:hover {
-        color: #eab326;
-    }
     .nav .my-account {
         padding: 5px 0;
         margin-bottom: 0;
@@ -340,6 +337,7 @@
     }
     html[dir=ltr] .nav .my-account {
         flex-direction: row-reverse;
+        justify-content: space-between;
     }
     .nav .my-account::after {
         content: '\e874';
@@ -349,42 +347,37 @@
     }
     html[dir=ltr] .nav .my-account::after {
         margin-left: auto;
-        margin-right: 10px;
+        margin-right: -15px;
     }
     .nav .my-account:hover {
         color: #eab326;
     }
     .nav .config-box {
-        width: auto;
-        height: auto;
-        flex-direction: column;
         display: none;
+        flex-direction: column;
     }
     .nav .config-box .getin {
-        position: relative;
-        width: auto;
-        height: auto;
         background-color: transparent;
         text-align: right;
-        border-radius: 0;
+        padding: 0;
         margin-right: 10px;
-        margin-bottom: 5px;
+    }
+    .nav .config-box .getin:first-child {
+        padding-bottom: 5px;
     }
     html[dir=ltr] .nav .config-box .getin {
         text-align: left;
         margin-right: auto;
         margin-left: 10px;
     }
+    .nav .config-box .getin:first-child::after {
+        display: none;
+    }
     .nav .config-box .getin .getin-link {
+        color: #fff;
         font-family: "medium";
         font-size: 13px;
-        visibility: visible;
-        opacity: 1;
         transition: all 0.4s ease-in-out;
-    }
-    .nav .login::after,
-    .nav .signup::after {
-        display: none;
     }
     .nav .config-box .getin .getin-link:hover {
         color: #eab326;
@@ -396,9 +389,25 @@
         right: auto;
         left: 0;
     }
+    .nav .nav-contact {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .nav-contact .contact-icon {
+        font-size: 28px;
+        margin-bottom: 5px;
+    }
+    .nav-contact .contact-number .tel {
+        font-size: 22px;
+    }
     html[dir=ltr] .nav .nav-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+    html[dir=ltr] .nav-contact .contact-icon {
         margin-left: 0;
-        margin-right: auto;
+        text-align: center;
     }
     /*** End Of Side Menu ***/
     .main-slider .owl-carousel .owl-dots {
@@ -441,6 +450,9 @@
     }
     .newsletter-content .newsletter-disc {
         font-size: 18px;
+    }
+    .footer {
+        padding: 60px 0px 20px 0px;
     }
     .footer-top .one {
         text-align: center;
@@ -615,10 +627,11 @@
     /*** Start Of Config List ***/
     .terms-content .user-config {
         left: 15px;
+        top: 33px;
     }
     html[dir=ltr] .terms-content .user-config {
         left: auto;
-        right: -140px;
+        right: -120px;
     }
     /*** Start Search Box ***/
     .search-box {
@@ -674,7 +687,7 @@
     .nav {
         position: fixed;
         top: 0;
-        padding: 60px 5px 30px 5px;
+        padding: 23px 5px 30px 5px;
         margin-bottom: 0;
         right: -580px;
         width: 300px;
@@ -704,6 +717,7 @@
         background-color: transparent;
         color: #fff;
         opacity: 1;
+        z-index: 9999;
         font-size: 22px;
     }
     html[dir=ltr] .nav .close {
@@ -715,11 +729,78 @@
     }
     .nav .nav-content {
         flex-direction: column;
-        max-width: 100%;
     }
     html[dir=ltr] .nav .nav-content {
         flex-direction: column;
         text-align: left;
+    }
+    .nav .lang {
+        margin-bottom: 60px;
+    }
+    html[dir=ltr] .nav .lang {
+        flex-direction: row-reverse;
+    }
+    .nav .saudia {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    html[dir=ltr] .nav .saudia {
+        margin-left: 0;
+    }
+    .nav .lang-name {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #fff;
+        font-family: "medium";
+        cursor: pointer;
+        flex-direction: row;
+        transition: all 0.4s ease-in-out;
+    }
+    html[dir=ltr] .nav .lang-name {
+        flex-direction: row-reverse;
+    }
+    .nav .lang-name:hover {
+        color: #eab326;
+    }
+    .nav .lang-list {
+        position: absolute;
+        left: auto;
+        top: 20px;
+        width: auto;
+        margin-bottom: 0;
+        background-color: transparent;
+        text-align: right;
+        z-index: auto;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        display: none;
+    }
+    html[dir=ltr] .nav .lang-list {
+        text-align: left;
+        left: 0;
+    }
+    .nav .lang-list .lang-list-li {
+        padding: 0;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    html[dir=ltr] .nav .lang-list .lang-list-li {
+        margin-right: auto;
+        margin-left: 10px;
+    }
+    .nav .lang-list .lang-list-li:first-child::after {
+        display: none;
+    }
+    .lang-list .page-link {
+        color: #fff;
+        font-size: 13px;
+        font-family: "medium";
+        transition: all 0.4s ease-in-out;
+    }
+    .lang-list .page-link:hover {
+        color: #eab326;
     }
     .nav-content .nav-list {
         flex-direction: column;
@@ -731,12 +812,6 @@
     .nav-list .nav-li {
         margin-left: 0;
         padding: 0;
-    }
-    .nav-list .fav-li {
-        display: block;
-    }
-    .nav-list .fav-li .nav-link {
-        display: flex;
     }
     html[dir=ltr] .nav-list .nav-li {
         /* margin-right: auto; */
@@ -753,7 +828,6 @@
     .shabi .nav-link {
         flex-direction: row;
         justify-content: space-between;
-        transition: all 0.4s ease-in-out;
     }
     html[dir=ltr] .shabi .nav-link {
         flex-direction: row-reverse;
@@ -807,80 +881,14 @@
     .shabi-list .shabi-link:hover {
         color: #eab326;
     }
-    .nav .lang-name {
-        padding: 5px 0;
-        margin-bottom: 0;
-        color: #fff;
-        font-family: "medium";
-        font-size: 16px;
-        display: flex;
-        flex-direction: row;
-        cursor: pointer;
-        justify-content: space-between;
-        transition: all 0.4s ease-in-out;
-    }
-    html[dir=ltr] .nav .lang-name {
-        flex-direction: row-reverse;
-    }
-    .nav .lang-name::after {
-        content: '\e874';
-        font-family: 'Linearicons-Free';
-        margin-left: 10px;
-        margin-top: 2px;
-    }
-    html[dir=ltr] .nav .lang-name::after {
-        margin-left: auto;
-        margin-right: 10px;
-    }
-    .nav .lang-name:hover {
-        color: #eab326;
-    }
-    .nav .lang-list {
-        position: relative;
-        left: auto;
-        top: auto;
-        width: auto;
-        margin-bottom: 0;
-        background-color: transparent;
-        text-align: right;
-        z-index: auto;
-        box-shadow: none;
-        display: flex;
-        flex-direction: column;
-        display: none;
-    }
-    html[dir=ltr] .nav .lang-list {
-        text-align: left;
-    }
-    .nav .lang-list .lang-list-li {
-        padding: 0;
-        margin-right: 10px;
-        margin-bottom: 5px;
-    }
-    html[dir=ltr] .nav .lang-list .lang-list-li {
-        margin-right: auto;
-        margin-left: 10px;
-    }
-    .nav .lang-list .lang-list-li:first-child::after {
-        display: none;
-    }
-    .lang-list .page-link {
-        color: #fff;
-        font-size: 13px;
-        font-family: "medium";
-        transition: all 0.4s ease-in-out;
-    }
-    .lang-list .page-link:hover {
-        color: #eab326;
-    }
     .nav .my-account {
         padding: 5px 0;
         margin-bottom: 0;
         color: #fff;
         font-family: "medium";
         font-size: 16px;
-        display: flex;
         cursor: pointer;
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
         transition: all 0.4s ease-in-out;
@@ -896,42 +904,34 @@
     }
     html[dir=ltr] .nav .my-account::after {
         margin-left: auto;
-        margin-right: 10px;
+        margin-right: -15px;
     }
     .nav .my-account:hover {
         color: #eab326;
     }
     .nav .config-box {
-        width: auto;
-        height: auto;
-        flex-direction: column;
         display: none;
+        flex-direction: column;
     }
     .nav .config-box .getin {
-        position: relative;
-        width: auto;
-        height: auto;
         background-color: transparent;
         text-align: right;
-        border-radius: 0;
+        padding: 5px 0 0 0;
         margin-right: 10px;
-        margin-bottom: 5px;
     }
     html[dir=ltr] .nav .config-box .getin {
         text-align: left;
         margin-right: auto;
         margin-left: 10px;
     }
+    .nav .config-box .getin:first-child::after {
+        display: none;
+    }
     .nav .config-box .getin .getin-link {
+        color: #fff;
         font-family: "medium";
         font-size: 13px;
-        visibility: visible;
-        opacity: 1;
         transition: all 0.4s ease-in-out;
-    }
-    .nav .login::after,
-    .nav .signup::after {
-        display: none;
     }
     .nav .config-box .getin .getin-link:hover {
         color: #eab326;
@@ -943,9 +943,25 @@
         right: auto;
         left: 0;
     }
+    .nav .nav-contact {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .nav-contact .contact-icon {
+        font-size: 28px;
+        margin-bottom: 5px;
+    }
+    .nav-contact .contact-number .tel {
+        font-size: 22px;
+    }
     html[dir=ltr] .nav .nav-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+    html[dir=ltr] .nav-contact .contact-icon {
         margin-left: 0;
-        margin-right: auto;
+        text-align: center;
     }
     /*** End Of Side Menu ***/
     .main-slider .owl-carousel .owl-dots {
