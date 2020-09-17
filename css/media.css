@@ -736,6 +736,7 @@
         text-align: left;
     }
     .nav .lang {
+        display: flex;
         margin-bottom: 60px;
     }
     html[dir=ltr] .nav .lang {
