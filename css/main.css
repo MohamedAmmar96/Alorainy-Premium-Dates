@@ -463,7 +463,12 @@ html[dir=ltr] .user-terms .search-icon {
 .nav .lang-name,
 .nav .lang-list,
 .nav .config-box,
-.nav .my-account {
+.nav .my-account,
+.nav .lang {
+    display: none;
+}
+
+.nav .nav-list .nav-li:nth-child(2) {
     display: none;
 }
 
